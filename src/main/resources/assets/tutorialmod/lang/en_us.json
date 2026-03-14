@@ -1,0 +1,9 @@
+{
+  "item.tutorialmod.flint_shard": "Flint Shard",
+
+  "block.tutorialmod.flint_block": "Flint Block",
+
+  "creativetab.tutorialmod.first_ctab": "First Creative Mode Tab",
+  "creativetab.tutorialmod.second_ctab": "Second Creative Mode Tab, but it has a flint block in it and some random items from the base game",
+  "creativetab.tutorialmod.flintstuff": "Flint Related Things"
+}
