@@ -2,9 +2,11 @@ package net.deltarayz.tutorialmod.blocks;
 
 import net.deltarayz.tutorialmod.TutorialMod;
 import net.deltarayz.tutorialmod.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -14,13 +16,32 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    // Sets up the deferred register BLOCKS
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(TutorialMod.MOD_ID);
 
+
+//---------------------------------NEW BLOCKS------------------------------------------------------//
     public static final DeferredBlock<Block> FLINT_BLOCK = registerBlock("flint_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    .strength(1.1f,2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
+    public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> BISMUTH_ORE = registerBlock("bismuth_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> BISMUTH_DEEPSLATE_ORE = registerBlock("bismuth_deepslate_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3, 6),
+                    BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
+
+
+    //Block breaking speed calculator: https://minecraft.wiki/w/Calculators/Breaking_speed (Thank you to the Minecraft Wiki for this wonderful tool!)
+//---------------------------------NEW BLOCKS------------------------------------------------------//
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
