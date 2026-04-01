@@ -5,6 +5,8 @@
     "tutorialmod:bismuth_ore",
     "tutorialmod:bismuth_deepslate_ore",
 
-    "tutorialmod:flint_block"
+    "tutorialmod:flint_block",
+
+    "tutorialmod:fun_block"
   ]
 }

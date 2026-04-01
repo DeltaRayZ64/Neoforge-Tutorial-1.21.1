@@ -1,11 +1,13 @@
 package net.deltarayz.tutorialmod.blocks;
 
 import net.deltarayz.tutorialmod.TutorialMod;
+import net.deltarayz.tutorialmod.blocks.custom.MagicBlock;
 import net.deltarayz.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CactusBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -37,6 +39,15 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BISMUTH_DEEPSLATE_ORE = registerBlock("bismuth_deepslate_ore",
             () -> new DropExperienceBlock(UniformInt.of(3, 6),
                     BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
+    public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> FUN_BLOCK = registerBlock("fun_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(0.01f,10f).sound(SoundType.ANVIL).lightLevel(state -> 15)
+                    .isRedstoneConductor((state, level, pos) -> false)
+                    .speedFactor(1.1f).friction(1.2f).requiresCorrectToolForDrops()));
 
 
 

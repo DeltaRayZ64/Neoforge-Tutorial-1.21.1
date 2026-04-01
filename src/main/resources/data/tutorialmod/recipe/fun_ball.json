@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": {
+      "item": "minecraft:magenta_dye"
+    },
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "rm",
+    "le"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorialmod:fun_ball"
+  }
+}
